@@ -1,0 +1,9 @@
+c:\users\alexa_000\documents\visual studio 2013\Projects\HorlogeSto\HorlogeSto\bin\Debug\HorlogeSto.exe.config
+c:\users\alexa_000\documents\visual studio 2013\Projects\HorlogeSto\HorlogeSto\bin\Debug\HorlogeSto.exe
+c:\users\alexa_000\documents\visual studio 2013\Projects\HorlogeSto\HorlogeSto\bin\Debug\HorlogeSto.pdb
+c:\users\alexa_000\documents\visual studio 2013\Projects\HorlogeSto\HorlogeSto\obj\Debug\HorlogeSto.csprojResolveAssemblyReference.cache
+c:\users\alexa_000\documents\visual studio 2013\Projects\HorlogeSto\HorlogeSto\obj\Debug\HorlogeSto.Form1.resources
+c:\users\alexa_000\documents\visual studio 2013\Projects\HorlogeSto\HorlogeSto\obj\Debug\HorlogeSto.Properties.Resources.resources
+c:\users\alexa_000\documents\visual studio 2013\Projects\HorlogeSto\HorlogeSto\obj\Debug\HorlogeSto.csproj.GenerateResource.Cache
+c:\users\alexa_000\documents\visual studio 2013\Projects\HorlogeSto\HorlogeSto\obj\Debug\HorlogeSto.exe
+c:\users\alexa_000\documents\visual studio 2013\Projects\HorlogeSto\HorlogeSto\obj\Debug\HorlogeSto.pdb
