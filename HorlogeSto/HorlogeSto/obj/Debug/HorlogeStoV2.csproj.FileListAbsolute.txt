@@ -1,0 +1,3 @@
+C:\Users\alexa_000\documents\visual studio 2013\Projects\HorlogeSto\HorlogeSto\bin\Debug\HorlogeSto.exe.config
+C:\Users\alexa_000\documents\visual studio 2013\Projects\HorlogeSto\HorlogeSto\obj\Debug\HorlogeSto.exe
+C:\Users\alexa_000\documents\visual studio 2013\Projects\HorlogeSto\HorlogeSto\obj\Debug\HorlogeSto.pdb

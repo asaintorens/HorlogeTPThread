@@ -13,102 +13,119 @@ namespace HorlogeSto
 {
     public partial class Form1 : Form
     {
-        private DateTime dateTime { get; set; }
-        private string textDate { get; set; }
-        private DateTime lastFrameUpdate { get; set; }
 
-        //bool en fonction des radio
-        private bool full;
-        private bool date;
-        private bool time;
+
+        public static int TICK_HORLOGE = 500;
+        private TypeDate LeFormatDate;
+        private Thread timeUpdate;
+     
         public Form1()
         {
             InitializeComponent();
-            this.full = true;
-            this.date = false;
-            this.time = false;
-            this.lastFrameUpdate = DateTime.Now;
+        
         }
 
         #region Radio_CheckChanged
         private void RadioFull_CheckedChanged(object sender, EventArgs e)
         {
-            this.full = true;
-            this.date = false;
-            this.time = false;
+            this.LeFormatDate = TypeDate.DateEtHeure;
+            this.RefreshTimeUI();
         }
 
         private void radioDay_CheckedChanged(object sender, EventArgs e)
         {
-            this.full = false;
-            this.date = true;
-            this.time = false;
+            this.LeFormatDate = TypeDate.Date;
+            this.RefreshTimeUI();
         }
 
         private void radioTime_CheckedChanged(object sender, EventArgs e)
         {
-            this.full = false;
-            this.date = false;
-            this.time = true;
+            this.LeFormatDate = TypeDate.Heure;
+            this.RefreshTimeUI();
         }
         #endregion
 
+        /// <summary>
+        /// Methode appelé par le thread
+        /// </summary>
         private void updateTime()
         {
-            //-2 = force l'update au chargement de la fenetre
-            this.lastFrameUpdate = DateTime.Now.AddSeconds(-2);
             while (true)
-            {
-                if (RefreshUI())
-                {
-                    FormatDateSelection();
+            {              
                     this.RefreshTimeUI();
-                }
-
-            }
+                    System.Threading.Thread.Sleep(TICK_HORLOGE);
+            }        
         }
 
-        private void FormatDateSelection()
-        {
-            this.dateTime = DateTime.Today;
-
-            if (this.full)
-            {
-                this.textDate = this.dateTime.ToShortDateString() + " " + DateTime.Now.ToLongTimeString();
-            }
-            else
-                if (this.date)
-                {
-                    this.textDate = this.dateTime.ToShortDateString();
-                }
-                else
-                    this.textDate = DateTime.Now.ToLongTimeString();
-        }
+      
 
         //true si necessite un refresh (1 refresh par seconde)
-        private bool RefreshUI()
-        {
-            return DateTime.Now.TimeOfDay.TotalSeconds - this.lastFrameUpdate.TimeOfDay.TotalSeconds >= 1;
-        }
+       
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Thread timeUpdate = new Thread(updateTime);
-            timeUpdate.Start();
+            this.timeUpdate = new Thread(updateTime);
+            this.timeUpdate.IsBackground = true;
+            this.timeUpdate.Start();
 
         }
 
-        //accepte les modifications a partir d'un autre thread que le main
+        /// <summary>
+        /// accepte les modifications a partir d'un autre thread que le main
+        /// grace à l'objet MethodInvoker
+        /// </summary>
         private void RefreshTimeUI()
         {
             MethodInvoker invoker = delegate
                {
-                   this.LabelHorloge.Text = this.textDate;
+                   this.LabelHorloge.Text = this.GenererDate();
                };
 
             this.Invoke(invoker);
         }
 
 
+        /// <summary>
+        /// Genere la date en fonction de la selection
+        /// </summary>
+        /// <returns></returns>
+        private string GenererDate()
+        {
+            string date = null;
+            switch (this.LeFormatDate)
+            {
+                case TypeDate.Date:
+                   date= DateTime.Now.ToShortDateString();
+                    break;
+                case TypeDate.DateEtHeure:
+                    date = DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToLongTimeString();
+                    break;
+                case TypeDate.Heure:
+                    date = DateTime.Now.ToLongTimeString();
+                    break;
+            }
+            return date;
+        }
+
+        /// <summary>
+        /// evenement fermeture
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Fermeture(object sender, FormClosingEventArgs e)
+        {
+            this.timeUpdate.Abort();
+            Application.ExitThread();
+        }
+    }
+
+    /// <summary>
+    /// enumération des choix du radio group
+    /// </summary>
+    public enum TypeDate
+    {
+        Date,
+        DateEtHeure,
+        Heure
     }
 }

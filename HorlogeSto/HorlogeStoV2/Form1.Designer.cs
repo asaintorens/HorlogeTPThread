@@ -1,4 +1,4 @@
-﻿namespace HorlogeSto
+﻿namespace HorlogeStoV2
 {
     partial class Form1
     {
@@ -28,32 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.LabelHorloge = new System.Windows.Forms.Label();
+            this.components = new System.ComponentModel.Container();
+            this.timerRefreshTime = new System.Windows.Forms.Timer(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.radioTime = new System.Windows.Forms.RadioButton();
             this.radioDay = new System.Windows.Forms.RadioButton();
             this.RadioFull = new System.Windows.Forms.RadioButton();
+            this.LabelHorloge = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // LabelHorloge
+            // timerRefreshTime
             // 
-            this.LabelHorloge.AutoSize = true;
-            this.LabelHorloge.Location = new System.Drawing.Point(563, 145);
-            this.LabelHorloge.Name = "LabelHorloge";
-            this.LabelHorloge.Size = new System.Drawing.Size(35, 13);
-            this.LabelHorloge.TabIndex = 0;
-            this.LabelHorloge.Text = "label1";
+            this.timerRefreshTime.Enabled = true;
+            this.timerRefreshTime.Interval = 500;
+            this.timerRefreshTime.Tick += new System.EventHandler(this.timerRefreshTime_Tick);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.radioTime);
             this.groupBox1.Controls.Add(this.radioDay);
             this.groupBox1.Controls.Add(this.RadioFull);
-            this.groupBox1.Location = new System.Drawing.Point(312, 260);
+            this.groupBox1.Location = new System.Drawing.Point(274, 311);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(604, 106);
-            this.groupBox1.TabIndex = 4;
+            this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Affichage";
             // 
@@ -93,17 +92,25 @@
             this.RadioFull.UseVisualStyleBackColor = true;
             this.RadioFull.CheckedChanged += new System.EventHandler(this.RadioFull_CheckedChanged);
             // 
+            // LabelHorloge
+            // 
+            this.LabelHorloge.AutoSize = true;
+            this.LabelHorloge.Location = new System.Drawing.Point(559, 266);
+            this.LabelHorloge.Name = "LabelHorloge";
+            this.LabelHorloge.Size = new System.Drawing.Size(35, 13);
+            this.LabelHorloge.TabIndex = 6;
+            this.LabelHorloge.Text = "label1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1250, 606);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(1153, 545);
             this.Controls.Add(this.LabelHorloge);
+            this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Fermeture);
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -113,11 +120,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Label LabelHorloge;
+        private System.Windows.Forms.Timer timerRefreshTime;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton radioTime;
         private System.Windows.Forms.RadioButton radioDay;
         private System.Windows.Forms.RadioButton RadioFull;
+        private System.Windows.Forms.Label LabelHorloge;
     }
 }
 

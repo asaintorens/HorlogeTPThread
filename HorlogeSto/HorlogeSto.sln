@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HorlogeSto", "HorlogeSto\HorlogeSto.csproj", "{F40AD3E6-7F30-45E7-B35B-B413AD248E39}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HorlogeStoV2", "HorlogeSto\HorlogeStoV2.csproj", "{F40AD3E6-7F30-45E7-B35B-B413AD248E39}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HorlogeStoV3", "HorlogeStoV2\HorlogeStoV3.csproj", "{AAD0AECB-FDC6-48FF-AA2F-27826B923424}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{F40AD3E6-7F30-45E7-B35B-B413AD248E39}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F40AD3E6-7F30-45E7-B35B-B413AD248E39}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F40AD3E6-7F30-45E7-B35B-B413AD248E39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAD0AECB-FDC6-48FF-AA2F-27826B923424}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAD0AECB-FDC6-48FF-AA2F-27826B923424}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAD0AECB-FDC6-48FF-AA2F-27826B923424}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAD0AECB-FDC6-48FF-AA2F-27826B923424}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

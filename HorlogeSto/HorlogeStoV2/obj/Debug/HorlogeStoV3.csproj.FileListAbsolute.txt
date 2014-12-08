@@ -1,0 +1,8 @@
+C:\Users\alexa_000\documents\visual studio 2013\Projects\HorlogeSto\HorlogeStoV2\bin\Debug\HorlogeStoV2.exe.config
+C:\Users\alexa_000\documents\visual studio 2013\Projects\HorlogeSto\HorlogeStoV2\bin\Debug\HorlogeStoV2.exe
+C:\Users\alexa_000\documents\visual studio 2013\Projects\HorlogeSto\HorlogeStoV2\bin\Debug\HorlogeStoV2.pdb
+C:\Users\alexa_000\documents\visual studio 2013\Projects\HorlogeSto\HorlogeStoV2\obj\Debug\HorlogeStoV2.Form1.resources
+C:\Users\alexa_000\documents\visual studio 2013\Projects\HorlogeSto\HorlogeStoV2\obj\Debug\HorlogeStoV2.Properties.Resources.resources
+C:\Users\alexa_000\documents\visual studio 2013\Projects\HorlogeSto\HorlogeStoV2\obj\Debug\HorlogeStoV3.csproj.GenerateResource.Cache
+C:\Users\alexa_000\documents\visual studio 2013\Projects\HorlogeSto\HorlogeStoV2\obj\Debug\HorlogeStoV2.exe
+C:\Users\alexa_000\documents\visual studio 2013\Projects\HorlogeSto\HorlogeStoV2\obj\Debug\HorlogeStoV2.pdb
